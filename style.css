@@ -1,0 +1,293 @@
+/**
+ * Общие
+ *
+ * @format
+ */
+
+:root {
+  --font-base: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Inter, "Noto Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-base);
+}
+html,
+body {
+  height: 100vh;
+  width: 100%;
+  /* overflow-x: hidden; */
+}
+
+body {
+  background: #0b1b28;
+  display: flex;
+  justify-content: center;
+  /* overflow: hidden; */
+}
+* {
+  /* outline: 1px solid red; */
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  height: 870px;
+  position: relative;
+  isolation: isolate;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  overflow: hidden;
+}
+
+.bg-video {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0;
+  animation: introVideo 2s ease-in-out forwards;
+}
+
+@keyframes introVideo {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 25px 18px calc(10px + env(safe-area-inset-bottom));
+  color: #fff;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeContent 0.8s ease-out forwards;
+  animation-delay: 2s;
+}
+
+@keyframes fadeContent {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content .avatar {
+  animation-delay: 0.2s;
+}
+
+.content .name {
+  animation-delay: 0.35s;
+}
+
+.content .position {
+  animation-delay: 0.5s;
+}
+
+.content .contact-icons {
+  animation-delay: 0.65s;
+}
+
+.content .contact-text {
+  animation-delay: 0.8s;
+}
+
+.content .company-logo {
+  animation-delay: 0.95s;
+}
+
+.content .company-info {
+  animation-delay: 1.1s;
+}
+
+.content .site {
+  animation-delay: 1.25s;
+}
+
+.content .add-btn {
+  animation-delay: 1.27s;
+}
+
+.avatar {
+  width: 173px;
+  height: 173px;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar::before {
+  content: "";
+  position: absolute;
+  inset: -32px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgb(255 255 255 / 15%) 19%,
+    rgba(255, 255, 255, 0) 67%
+  );
+  z-index: -1;
+}
+
+.avatar img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 134%;
+  margin-bottom: 15px;
+}
+
+.position {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 160%;
+  margin-bottom: 15px;
+}
+
+.contacts-block {
+  text-align: center;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 15px;
+}
+
+.icon.big {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #2ca6fd;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* картинки */
+.icon.big.phone {
+  background-image: url("icons/phone.svg");
+}
+.icon.big.mail {
+  background-image: url("icons/mail.svg");
+}
+.icon.big.msg {
+  background-image: url("icons/msg.svg");
+}
+
+.contact-text a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.company-block {
+  margin: 22px 0;
+}
+
+.company-logo {
+  width: 277px;
+  height: auto;
+}
+
+.company-info {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 160%;
+}
+
+.site {
+  margin-top: 8px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8.21px;
+  width: 85%;
+  margin: 0 auto;
+  padding: 22px;
+  background: #2ca6fd;
+  border-radius: 15.6px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.2s;
+  font-size: 21.39px;
+  font-weight: 600;
+  line-height: 134%;
+}
+
+.add-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.add-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  animation: shine 4s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -150%;
+  }
+  20% {
+    left: 150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
