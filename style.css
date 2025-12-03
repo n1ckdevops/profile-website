@@ -55,13 +55,13 @@ body {
 
 .bg-video-iframe {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  width: 177.78vh; /* 100vh * (16/9) */
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
   border: none;
-  pointer-events: none; /* чтобы iframe не перекрывал клики */
-  object-fit: cover;
 }
 
 .video-overlay {
@@ -69,7 +69,7 @@ body {
   inset: 0;
   background: #0b1b28; /* темный фон как у твоего видео */
   z-index: 2;
-  animation: fadeOverlay 2s ease-in-out forwards;
+  animation: fadeOverlay 3s linear forwards;
 }
 
 @keyframes fadeOverlay {
@@ -96,7 +96,7 @@ body {
   opacity: 0;
   transform: translateY(15px);
   animation: fadeContent 0.8s ease-out forwards;
-  animation-delay: 2s;
+  animation-delay: 3s;
 }
 
 @keyframes fadeContent {
