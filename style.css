@@ -43,15 +43,25 @@ body {
   overflow: hidden;
 }
 
-.bg-video {
+.bg-video-wrapper {
   position: absolute;
-  top: -80px;
+  top: -80px; /* как было у твоего видео */
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   z-index: 1;
-  opacity: 1;
+  overflow: hidden;
+}
+
+.bg-video-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none; /* чтобы iframe не перекрывал клики */
+  object-fit: cover;
 }
 
 .video-overlay {
